@@ -5,9 +5,8 @@ pipeline {
         stage('Capture Current Time') {
             steps {
                 script {
-                    def currentTime = new Date()
-                    def formattedTime = new SimpleDateFormat("yyyyMMddHHmmss").format(currentTime)
-                    echo "Current Time (Formatted): ${formattedTime}"
+                    def timestamp = new Date().format('dd-MM-yyyy')
+                    echo "Current Time (Formatted): ${timestamp}"
                 }
             }
         }
